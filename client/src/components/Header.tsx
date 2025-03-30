@@ -28,7 +28,7 @@ export default function Header() {
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <Link href="/" className="text-primary font-['Poppins'] font-bold text-2xl">
-              ExcelTutor
+              Brain Boost Academy
             </Link>
           </div>
 

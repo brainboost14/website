@@ -10,15 +10,14 @@ export default function HeroSection() {
               Expert Home Tutoring<br />For Academic Excellence
             </h1>
             <p className="text-lg mb-8 text-foreground leading-relaxed">
-              Personalized tutoring sessions with experienced educators to help students reach their full potential. Our expert teachers provide customized learning plans for all academic levels.
-            </p>
+            ज्ञान का WiFi ऑन करो, दिमाग़ की स्पीड बढ़ाओ!"           </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 size="lg"
                 asChild
                 className="bg-primary hover:bg-primary/90 text-white font-['Poppins'] font-semibold"
               >
-                <a href="#contact">Book a Session</a>
+                <a href="tel:+919335122788">Book a Session</a>
               </Button>
               <Button
                 variant="outline"

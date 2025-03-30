@@ -6,11 +6,11 @@ export default function Footer() {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="font-['Poppins'] font-bold text-xl mb-4">ExcelTutor</h3>
+            <h3 className="font-['Poppins'] font-bold text-xl mb-4">Brain Boost Academy</h3>
             <p className="text-white/80 mb-4">
               Providing quality tutoring services to help students achieve academic excellence.
             </p>
-            <div className="flex space-x-4">
+            {/* <div className="flex space-x-4">
               <a
                 href="#"
                 className="text-white hover:text-[#A0BFE0] transition-colors duration-300"
@@ -39,7 +39,7 @@ export default function Footer() {
               >
                 <Linkedin size={20} />
               </a>
-            </div>
+            </div> */}
           </div>
 
           <div>
@@ -155,22 +155,22 @@ export default function Footer() {
             <ul className="space-y-2">
               <li className="flex items-start">
                 <Mail className="h-5 w-5 mt-1 mr-3" />
-                <span>info@exceltutor.com</span>
+                <span>brainboostacad@gmail.com</span>
               </li>
               <li className="flex items-start">
                 <Phone className="h-5 w-5 mt-1 mr-3" />
-                <span>(555) 123-4567</span>
+                <span>+91 9335122788</span>
               </li>
               <li className="flex items-start">
                 <Clock className="h-5 w-5 mt-1 mr-3" />
-                <span>Mon-Fri: 9am-7pm EST</span>
+                <span>Mon-Fri: 9am-7pm</span>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-white/20 mt-12 pt-8 text-center">
-          <p className="text-white/80">&copy; {new Date().getFullYear()} ExcelTutor. All rights reserved.</p>
+          <p className="text-white/80">&copy; {new Date().getFullYear()} Brain Boost Academy. All rights reserved.</p>
         </div>
       </div>
     </footer>

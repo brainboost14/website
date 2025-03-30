@@ -4,26 +4,26 @@ import { Badge } from "@/components/ui/badge";
 const teachers = [
   {
     id: 1,
-    name: "Dr. Sarah Johnson",
-    role: "Mathematics & Physics Specialist",
-    image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
-    skills: ["Advanced Mathematics", "Physics", "SAT/ACT Prep"],
-    bio: "Ph.D. in Mathematics with 10+ years of teaching experience. Specializes in making complex concepts accessible to students of all levels.",
+    name: "Shreya Singh",
+    role: "Mathematics, Computer and Chemistry",
+    // image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
+    skills: ["7+ years Experience", "Counselling", ],
+    bio: "B.Sc. in Computer Science , B.A & M.A in Psychology and Passionate about student Growth & holistic learning.",
   },
   {
     id: 2,
-    name: "Prof. Michael Chen",
-    role: "Languages & Literature Expert",
-    image: "https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
-    skills: ["English Literature", "Creative Writing", "ESL"],
-    bio: "Master's in English Literature and certified TEFL instructor. Passionate about fostering critical thinking through literature and language.",
+    name: "Ritvik Srivastava ",
+    role: "Physics and Social Science Expert",
+    // image: "https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
+    skills: ["3+ years of Experience", "UPSC Exams Expert"],
+    bio: "Specialized in competitive Exam Stratergies and Structured Preparation, First-hand Experience with UPSC & Defense Exams.",
   },
   {
     id: 3,
-    name: "Ms. Emily Rodriguez",
-    role: "Science & Research Mentor",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=776&q=80",
-    skills: ["Biology", "Chemistry", "Research Methods"],
+    name: "Pratima Singh",
+    role: "Biology and Psychology",
+    // image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=776&q=80",
+    skills: ["5+ years of Experience", "Psychology (Gold Medalist)"],
     bio: "Molecular Biologist with classroom teaching experience. Specializes in science education and preparing students for research projects.",
   },
 ];
@@ -47,13 +47,7 @@ export default function TeachersSection() {
               key={teacher.id}
               className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
             >
-              <div className="h-80 overflow-hidden">
-                <img
-                  src={teacher.image}
-                  alt={teacher.name}
-                  className="w-full h-full object-cover object-center"
-                />
-              </div>
+              
               <div className="p-6">
                 <h3 className="font-['Poppins'] font-bold text-2xl text-primary mb-2">
                   {teacher.name}
@@ -74,7 +68,7 @@ export default function TeachersSection() {
                   className="w-full bg-primary hover:bg-primary/90 text-white font-['Poppins'] font-semibold"
                   asChild
                 >
-                  <a href="#contact">Book a Session</a>
+                  <a href="tel:+919335122788">Book a Session</a>
                 </Button>
               </div>
             </div>

@@ -34,7 +34,7 @@ export default function FeatureSection() {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="font-['Poppins'] font-bold text-3xl md:text-4xl text-primary mb-4">
-            Why Choose ExcelTutor?
+            Why Choose Brain Boost Academy?
           </h2>
           <p className="text-lg text-foreground max-w-3xl mx-auto">
             Our tutoring service offers unique benefits that set us apart from traditional education

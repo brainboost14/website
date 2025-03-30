@@ -3,29 +3,30 @@ import { Star, StarHalf } from "lucide-react";
 const testimonials = [
   {
     content:
-      "My daughter's grades in mathematics improved dramatically after just one month of tutoring with Dr. Johnson. Her confidence has soared and she now enjoys solving math problems!",
-    author: "Jennifer Adams",
-    role: "Parent of high school student",
-    avatar: "https://randomuser.me/api/portraits/women/54.jpg",
+      "My son's understanding of physics has improved tremendously after just one month of tutoring with Mr. Ritvik . He now solves problems with confidence and enjoys the subject!",
+    author: "Priya Mehta",
+    role: "Parent of Class 10 student",
+    // avatar: "https://randomuser.me/api/portraits/women/45.jpg",
     rating: 5,
   },
   {
     content:
-      "Prof. Chen helped me improve my writing skills significantly. His feedback was always constructive and helped me develop my own voice. I got into my dream college thanks to his help with my application essays.",
-    author: "Marcus Thompson",
-    role: "College freshman",
-    avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+      "Ms. Pratima's psychology classes were a game-changer for me. His insights and explanations made the subject so interesting, and I scored exceptionally well in my exams!",
+    author: "Amit Verma",
+    role: "College student",
+    // avatar: "https://randomuser.me/api/portraits/men/38.jpg",
     rating: 5,
   },
   {
     content:
-      "Ms. Rodriguez made biology fascinating! Her practical approach and clear explanations helped me understand complex concepts. I went from struggling to getting an A in my AP Biology exam.",
-    author: "Sophia Lee",
-    role: "High school senior",
-    avatar: "https://randomuser.me/api/portraits/women/26.jpg",
+      "Ms. Shreya made chemistry easy to grasp with her practical approach and engaging teaching style. Thanks to her, I gained a deeper understanding and improved my grades significantly!",
+    author: "Riya Patel",
+    role: "Class 12 student",
+    // avatar: "https://randomuser.me/api/portraits/women/30.jpg",
     rating: 4.5,
   },
 ];
+
 
 export default function TestimonialsSection() {
   return (
@@ -62,11 +63,11 @@ export default function TestimonialsSection() {
               <div className="relative z-10">
                 <p className="text-foreground mb-6 italic">{testimonial.content}</p>
                 <div className="flex items-center">
-                  <img
+                  {/* <img
                     src={testimonial.avatar}
                     alt={testimonial.author}
                     className="w-12 h-12 rounded-full mr-4"
-                  />
+                  /> */}
                   <div>
                     <h4 className="font-['Poppins'] font-semibold text-primary">
                       {testimonial.author}

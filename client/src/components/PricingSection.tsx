@@ -3,44 +3,44 @@ import { Check, X, Users, FileText } from "lucide-react";
 
 const pricingPackages = [
   {
-    title: "Starter Package",
-    price: "$35",
-    unit: "/hour",
+    title: "Basic Plan",
+    price: "₹2500",
+    unit: "/month",
     features: [
-      { name: "4 sessions per month (1 hour each)", included: true },
-      { name: "Basic assessment and progress tracking", included: true },
-      { name: "Email support between sessions", included: true },
-      { name: "Access to basic learning materials", included: true },
+      // { name: "8 live sessions per month (1 hour each)", included: true },
+      { name: "Personalized progress tracking", included: true },
+      { name: "WhatsApp and email support", included: true },
+      { name: "Access to recorded sessions", included: true },
       { name: "Homework review and feedback", included: false },
       { name: "Customized study materials", included: false },
     ],
     popular: false,
   },
   {
-    title: "Standard Package",
-    price: "$30",
-    unit: "/hour",
+    title: "Advanced Plan",
+    price: "₹3000",
+    unit: "/month",
     features: [
-      { name: "8 sessions per month (1 hour each)", included: true },
-      { name: "Comprehensive assessment and planning", included: true },
-      { name: "Email and phone support between sessions", included: true },
-      { name: "Access to all learning resources", included: true },
-      { name: "Homework review and feedback", included: true },
+      // { name: "12 live sessions per month (1 hour each)", included: true },
+      { name: "Detailed assessment and study plan", included: true },
+      { name: "WhatsApp, email, and phone support", included: true },
+      { name: "Access to recorded sessions and extra practice tests", included: true },
+      { name: "Homework review and personalized feedback", included: true },
       { name: "Customized study materials", included: false },
     ],
     popular: true,
   },
   {
-    title: "Premium Package",
-    price: "$25",
-    unit: "/hour",
+    title: "Premium Plan",
+    price: "₹3500",
+    unit: "/month",
     features: [
-      { name: "12 sessions per month (1 hour each)", included: true },
-      { name: "Advanced assessment and planning", included: true },
-      { name: "Priority email and phone support", included: true },
-      { name: "Access to premium learning resources", included: true },
-      { name: "Homework review and feedback", included: true },
-      { name: "Customized study materials", included: true },
+      // { name: "16 live sessions per month (1 hour each)", included: true },
+      { name: "Comprehensive assessment and customized study plan", included: true },
+      { name: "Priority support via WhatsApp, email, and phone", included: true },
+      { name: "Access to all recorded sessions and premium resources", included: true },
+      { name: "Homework review and in-depth feedback", included: true },
+      { name: "Personalized, customized study materials", included: true },
     ],
     popular: false,
   },
@@ -51,13 +51,13 @@ const additionalServices = [
     icon: Users,
     title: "Group Sessions",
     description: "Small group tutoring (2-3 students) at discounted rates",
-    price: "$20/hour per student",
+    // price: "$20/hour per student",
   },
   {
     icon: FileText,
     title: "Test Preparation",
     description: "Focused preparation for standardized tests (SAT, ACT, AP)",
-    price: "$40/hour",
+    // price: "$40/hour",
   },
 ];
 
@@ -133,7 +133,7 @@ export default function PricingSection() {
                   className="w-full bg-primary hover:bg-primary/90 text-white font-['Poppins'] font-semibold"
                   asChild
                 >
-                  <a href="#contact">Get Started</a>
+                  <a href="tel:+919335122788">Get Started</a>
                 </Button>
               </div>
             </div>

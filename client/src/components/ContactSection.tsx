@@ -236,8 +236,8 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h4 className="font-['Poppins'] font-semibold text-lg mb-1">Email</h4>
-                    <p className="text-foreground">info@exceltutor.com</p>
-                    <p className="text-foreground">support@exceltutor.com</p>
+                    <p className="text-foreground">admin.brainboost@gmail.com</p>
+                    {/* <p className="text-foreground">support@exceltutor.com</p> */}
                   </div>
                 </div>
 
@@ -247,8 +247,9 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h4 className="font-['Poppins'] font-semibold text-lg mb-1">Phone</h4>
-                    <p className="text-foreground">(555) 123-4567</p>
-                    <p className="text-foreground">Mon-Fri: 9am-7pm EST</p>
+                    <p className="text-foreground">+919335122788</p>
+                    <p className="text-foreground">+918887514336</p>
+                    <p className="text-foreground">Mon-Fri: 9am-7pm</p>
                   </div>
                 </div>
 
@@ -258,8 +259,8 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h4 className="font-['Poppins'] font-semibold text-lg mb-1">Tutoring Hours</h4>
-                    <p className="text-foreground">Mon-Fri: 8am-9pm EST</p>
-                    <p className="text-foreground">Sat-Sun: 10am-6pm EST</p>
+                    <p className="text-foreground">Mon-Fri: 8am-9pm</p>
+                    <p className="text-foreground">Sat-Sun: 10am-6pm</p>
                   </div>
                 </div>
               </div>
