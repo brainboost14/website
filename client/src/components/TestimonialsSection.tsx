@@ -11,7 +11,7 @@ const testimonials = [
   },
   {
     content:
-      "Ms. Pratima's psychology classes were a game-changer for me. His insights and explanations made the subject so interesting, and I scored exceptionally well in my exams!",
+      "Ms. Pratima's psychology classes were a game-changer for me. Her insights and explanations made the subject so interesting, and I scored exceptionally well in my exams!",
     author: "Amit Verma",
     role: "College student",
     // avatar: "https://randomuser.me/api/portraits/men/38.jpg",
