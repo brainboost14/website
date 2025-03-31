@@ -153,7 +153,7 @@ export default function PricingSection() {
                 <div>
                   <h4 className="font-['Poppins'] font-semibold text-lg mb-2">{service.title}</h4>
                   <p className="text-foreground mb-2">{service.description}</p>
-                  <p className="text-primary font-semibold">{service.price}</p>
+                  {/* <p className="text-primary font-semibold">{service.price}</p> */}
                 </div>
               </div>
             ))}
