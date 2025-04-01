@@ -10,36 +10,6 @@ export default function Footer() {
             <p className="text-white/80 mb-4">
               Providing quality tutoring services to help students achieve academic excellence.
             </p>
-            {/* <div className="flex space-x-4">
-              <a
-                href="#"
-                className="text-white hover:text-[#A0BFE0] transition-colors duration-300"
-                aria-label="Facebook"
-              >
-                <Facebook size={20} />
-              </a>
-              <a
-                href="#"
-                className="text-white hover:text-[#A0BFE0] transition-colors duration-300"
-                aria-label="Twitter"
-              >
-                <Twitter size={20} />
-              </a>
-              <a
-                href="#"
-                className="text-white hover:text-[#A0BFE0] transition-colors duration-300"
-                aria-label="Instagram"
-              >
-                <Instagram size={20} />
-              </a>
-              <a
-                href="#"
-                className="text-white hover:text-[#A0BFE0] transition-colors duration-300"
-                aria-label="LinkedIn"
-              >
-                <Linkedin size={20} />
-              </a>
-            </div> */}
           </div>
 
           <div>
@@ -101,7 +71,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="#"
+                  href="tel:+919335122788"
                   className="text-white/80 hover:text-white transition-colors duration-300"
                 >
                   Mathematics
@@ -109,7 +79,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="tel:+919335122788"
                   className="text-white/80 hover:text-white transition-colors duration-300"
                 >
                   Physics
@@ -117,15 +87,15 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="tel:+919335122788"
                   className="text-white/80 hover:text-white transition-colors duration-300"
                 >
-                  English & Literature
+                    Computer
                 </a>
               </li>
               <li>
                 <a
-                  href="#"
+                  href="tel:+919335122788"
                   className="text-white/80 hover:text-white transition-colors duration-300"
                 >
                   Biology
@@ -133,7 +103,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="tel:+919335122788"
                   className="text-white/80 hover:text-white transition-colors duration-300"
                 >
                   Chemistry
@@ -141,7 +111,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="tel:+919335122788"
                   className="text-white/80 hover:text-white transition-colors duration-300"
                 >
                   Test Preparation
@@ -159,18 +129,18 @@ export default function Footer() {
               </li>
               <li className="flex items-start">
                 <Phone className="h-5 w-5 mt-1 mr-3" />
-                <span>+91 9335122788</span>
+                <span>+919335122788</span>
               </li>
               <li className="flex items-start">
                 <Clock className="h-5 w-5 mt-1 mr-3" />
-                <span>Mon-Fri: 9am-7pm</span>
+                <span>Mon-Fri: 9am-7pm IST</span>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-white/20 mt-12 pt-8 text-center">
-          <p className="text-white/80">&copy; {new Date().getFullYear()} Brain Boost Academy. All rights reserved.</p>
+          <p className="text-white/80">&copy; {new Date().getFullYear()} BrainBoostAcademy. All rights reserved.</p>
         </div>
       </div>
     </footer>

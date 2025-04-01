@@ -4,6 +4,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Route, Switch } from "wouter";
 import Home from "@/pages/Home";
 import NotFound from "@/pages/not-found";
+import Watermark from "@/components/Watermark";
 
 function Router() {
   return (
@@ -18,6 +19,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <Router />
+      <Watermark />
       <Toaster />
     </QueryClientProvider>
   );
