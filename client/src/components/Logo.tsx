@@ -1,5 +1,5 @@
 import React from "react";
-import LogoImage from "./logo.png"; // Ensure this path is correct
+import LogoImage from "logo.png"; // Ensure this path is correct
 
 interface LogoProps {
   size?: number;
