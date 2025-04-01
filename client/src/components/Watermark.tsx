@@ -1,5 +1,5 @@
 import React from "react";
-import { Logo } from "./Logo";
+import Logo from "@/assets/logo.png";
 import { motion } from "framer-motion";
 
 export default function Watermark() {
@@ -11,7 +11,11 @@ export default function Watermark() {
       transition={{ duration: 0.5, delay: 1 }}
       whileHover={{ rotate: 10 }}
     >
-      <Logo size={60} />
+      <img 
+        src={Logo} 
+        alt="Logo Watermark" 
+        className="w-16 h-16 object-contain drop-shadow-md"
+      />
     </motion.div>
   );
 }
