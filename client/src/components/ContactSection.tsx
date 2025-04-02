@@ -6,6 +6,7 @@ import { apiRequest } from "@/lib/queryClient";
 import { useMutation } from "@tanstack/react-query";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, Clock, CheckCircle, HelpCircle, Calendar } from "lucide-react";
+import { sendEmail } from "@/lib/emailjs";
 import {
   Form,
   FormControl,
@@ -91,8 +92,32 @@ export default function ContactSection() {
     },
   });
 
-  function onSubmit(data: ContactFormValues) {
+function onSubmit(data: ContactFormValues) {
+    // First submit the data to our backend
     submitContactForm(data);
+    
+    // Then send the email using EmailJS
+    const emailParams = {
+      from_name: data.name,
+      from_email: data.email,
+      from_phone: data.phone || 'Not provided',
+      subject: data.subject,
+      message: data.message,
+    };
+    
+    // Use our EmailJS utility
+    sendEmail(
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID || '', 
+      import.meta.env.VITE_EMAILJS_SERVICE_ID || '',
+      emailParams
+    )
+    .then((response) => {
+      if (response.success) {
+        console.log('Email sent successfully');
+      } else {
+        console.error('Error sending email:', response.error);
+      }
+    });
   }
 
   const contactInfo = [
@@ -283,7 +308,7 @@ export default function ContactSection() {
                         render={({ field }) => (
                           <FormItem>
                             <FormLabel className="text-foreground font-semibold">
-                              Class
+                              Subject Interest
                             </FormLabel>
                             <Select
                               onValueChange={field.onChange}
@@ -295,16 +320,13 @@ export default function ContactSection() {
                                 </SelectTrigger>
                               </FormControl>
                               <SelectContent>
-                              <SelectItem value="9">9th</SelectItem>
-                              <SelectItem value="10">10th</SelectItem>
-                              <SelectItem value="other">Others</SelectItem>
-                                {/* <SelectItem value="mathematics">Mathematics</SelectItem>
-                                <SelectItem value="physics">Physics</SelectItem>
-                                <SelectItem value="english">English & Literature</SelectItem>
+                                <SelectItem value="mathematics">9th</SelectItem>
+                                <SelectItem value="physics">10th</SelectItem>
+                                {/* <SelectItem value="english">English </SelectItem>
                                 <SelectItem value="biology">Biology</SelectItem>
                                 <SelectItem value="chemistry">Chemistry</SelectItem>
-                                <SelectItem value="test-prep">Test Preparation</SelectItem>
-                                <SelectItem value="other">Other (Please specify)</SelectItem> */}
+                                <SelectItem value="test-prep">Test Preparation</SelectItem> */}
+                                <SelectItem value="other">Other</SelectItem>
                               </SelectContent>
                             </Select>
                             <FormMessage />
