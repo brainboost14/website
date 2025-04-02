@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const pricingPackages = [
   {
     title: "Basic Plan",
-    price: "₹2500",
+    price: "₹2499",
     unit: "/month",
     features: [
       // { name: "8 sessions per month (1 hour each)", included: true },
@@ -21,7 +21,7 @@ const pricingPackages = [
   },
   {
     title: "Advanced Plan",
-    price: "₹3000",
+    price: "₹2999",
     unit: "/month",
     features: [
       // { name: "12 sessions per month (1 hour each)", included: true },
