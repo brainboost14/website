@@ -40,7 +40,7 @@ type ContactFormValues = z.infer<typeof contactFormSchema>;
 const faqs = [
   {
     question: "How do online sessions work?",
-    answer: "YOU CAN ACCESS IT ON LAPTOP , COMPUTER, TABLET AND EVEN MOBILE PHONE TOO",
+    answer: "Our virtual classroom uses video conferencing and interactive tools. You'll need a computer with internet access, a webcam, and a microphone.",
     icon: HelpCircle,
   },
   {
@@ -97,12 +97,21 @@ function onSubmit(data: ContactFormValues) {
     submitContactForm(data);
     
     // Then send the email using EmailJS
+    // Create a comprehensive email with all form fields clearly labeled
     const emailParams = {
       from_name: data.name,
       from_email: data.email,
       from_phone: data.phone || 'Not provided',
-      subject: data.subject,
+      subject_interest: data.subject,
       message: data.message,
+      // Add formatted content for better email readability
+      formatted_content: `
+Full Name: ${data.name}
+Email: ${data.email}
+Phone: ${data.phone || 'Not provided'}
+Subject Interest: ${data.subject}
+Message: ${data.message}
+      `.trim(),
     };
     
     // Use our EmailJS utility
@@ -124,17 +133,17 @@ function onSubmit(data: ContactFormValues) {
     {
       icon: Mail,
       title: "Email",
-      details: ["brainboostacad@gmail.com"],
+      details: ["info@exceltutor.com", "support@exceltutor.com"],
     },
     {
       icon: Phone,
       title: "Phone",
-      details: ["+919335122788", "Mon-Fri: 9am-7pm IST"],
+      details: ["(555) 123-4567", "Mon-Fri: 9am-7pm EST"],
     },
     {
       icon: Clock,
       title: "Tutoring Hours",
-      details: ["Mon-Sat: 4pm-8pm IST"],
+      details: ["Mon-Fri: 8am-9pm EST", "Sat-Sun: 10am-6pm EST"],
     },
   ];
 
@@ -285,7 +294,7 @@ function onSubmit(data: ContactFormValues) {
                         render={({ field }) => (
                           <FormItem>
                             <FormLabel className="text-foreground font-semibold">
-                              Phone Number 
+                              Phone Number (Optional)
                             </FormLabel>
                             <FormControl>
                               <Input placeholder="Enter your phone number" {...field} className="focus:border-primary" />
@@ -320,13 +329,13 @@ function onSubmit(data: ContactFormValues) {
                                 </SelectTrigger>
                               </FormControl>
                               <SelectContent>
-                                <SelectItem value="mathematics">9th</SelectItem>
-                                <SelectItem value="physics">10th</SelectItem>
-                                {/* <SelectItem value="english">English </SelectItem>
+                                <SelectItem value="mathematics">Mathematics</SelectItem>
+                                <SelectItem value="physics">Physics</SelectItem>
+                                <SelectItem value="english">English & Literature</SelectItem>
                                 <SelectItem value="biology">Biology</SelectItem>
                                 <SelectItem value="chemistry">Chemistry</SelectItem>
-                                <SelectItem value="test-prep">Test Preparation</SelectItem> */}
-                                <SelectItem value="other">Other</SelectItem>
+                                <SelectItem value="test-prep">Test Preparation</SelectItem>
+                                <SelectItem value="other">Other (Please specify)</SelectItem>
                               </SelectContent>
                             </Select>
                             <FormMessage />
