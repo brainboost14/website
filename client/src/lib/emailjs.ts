@@ -2,7 +2,7 @@ import emailjs from '@emailjs/browser';
 
 // Initialize EmailJS with your public key
 export const initEmailJS = () => {
-  emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY || '');
+  emailjs.init('YNuKAB4GUvzqECQI6');
 };
 
 // Send an email via EmailJS

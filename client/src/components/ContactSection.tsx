@@ -116,8 +116,8 @@ Message: ${data.message}
     
     // Use our EmailJS utility
     sendEmail(
-      import.meta.env.VITE_EMAILJS_TEMPLATE_ID || '', 
-      import.meta.env.VITE_EMAILJS_SERVICE_ID || '',
+      'template_lcwsqtb', 
+      'service_1ujsvfi',
       emailParams
     )
     .then((response) => {
