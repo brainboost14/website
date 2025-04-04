@@ -98,7 +98,23 @@ export default function Footer() {
                   href="tel:+919335122788"
                   className="text-white/80 hover:text-white transition-colors duration-300"
                 >
+                  Psychology
+                </a>
+              </li>
+              <li>
+                <a
+                  href="tel:+919335122788"
+                  className="text-white/80 hover:text-white transition-colors duration-300"
+                >
                   Biology
+                </a>
+              </li>
+              <li>
+                <a
+                  href="tel:+919335122788"
+                  className="text-white/80 hover:text-white transition-colors duration-300"
+                >
+                  Social Science
                 </a>
               </li>
               <li>
