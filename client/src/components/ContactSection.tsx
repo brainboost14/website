@@ -40,7 +40,7 @@ type ContactFormValues = z.infer<typeof contactFormSchema>;
 const faqs = [
   {
     question: "How do online sessions work?",
-    answer: "Our virtual classroom uses video conferencing and interactive tools. You'll need a computer with internet access, a webcam, and a microphone.",
+    answer: "Our virtual classroom uses video conferencing and interactive tools. YOU CAN ACCESS IT ON LAPTOP , COMPUTER, TABLET AND EVEN MOBILE PHONE TOO.",
     icon: HelpCircle,
   },
   {
@@ -83,7 +83,7 @@ export default function ContactSection() {
     );
   
     // 👇 Trigger SMS intent for +918709222590
-    const smsLink = `sms:+917903989190?&body=${smsBody}`;
+    const smsLink = `sms:+918887514336?&body=${smsBody}`;
     window.location.href = smsLink;
   
     // ✅ Mark submission as complete
@@ -97,17 +97,17 @@ export default function ContactSection() {
     {
       icon: Mail,
       title: "Email",
-      details: ["info@exceltutor.com", "support@exceltutor.com"],
+      details: ["brainboostacad@gmail.com"],
     },
     {
       icon: Phone,
       title: "Phone",
-      details: ["(555) 123-4567", "Mon-Fri: 9am-7pm EST"],
+      details: ["+919335122788", "Mon-Fri: 9am-7pm EST"],
     },
     {
       icon: Clock,
       title: "Tutoring Hours",
-      details: ["Mon-Fri: 8am-9pm EST", "Sat-Sun: 10am-6pm EST"],
+      details: ["Mon-Fri: 4pm-8pm IST"],
     },
   ];
 
@@ -258,7 +258,7 @@ export default function ContactSection() {
                         render={({ field }) => (
                           <FormItem>
                             <FormLabel className="text-foreground font-semibold">
-                              Phone Number (Optional)
+                              Phone Number
                             </FormLabel>
                             <FormControl>
                               <Input placeholder="Enter your phone number" {...field} className="focus:border-primary" />
@@ -293,13 +293,13 @@ export default function ContactSection() {
                                 </SelectTrigger>
                               </FormControl>
                               <SelectContent>
-                                <SelectItem value="mathematics">Mathematics</SelectItem>
-                                <SelectItem value="physics">Physics</SelectItem>
-                                <SelectItem value="english">English & Literature</SelectItem>
-                                <SelectItem value="biology">Biology</SelectItem>
+                                <SelectItem value="9th">9th</SelectItem>
+                                <SelectItem value="10th">10th</SelectItem>
+                                <SelectItem value="Others">Others</SelectItem>
+                                {/* <SelectItem value="biology">Biology</SelectItem>
                                 <SelectItem value="chemistry">Chemistry</SelectItem>
                                 <SelectItem value="test-prep">Test Preparation</SelectItem>
-                                <SelectItem value="other">Other (Please specify)</SelectItem>
+                                <SelectItem value="other">Other (Please specify)</SelectItem> */}
                               </SelectContent>
                             </Select>
                             <FormMessage />
