@@ -58,7 +58,8 @@ const faqs = [
 export default function ContactSection() {
   const { toast } = useToast();
   const [isSubmitted, setIsSubmitted] = useState(false);
-
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactFormSchema),
     defaultValues: {
@@ -69,65 +70,28 @@ export default function ContactSection() {
       message: "",
     },
   });
-
-  const { mutate: submitContactForm, isPending } = useMutation({
-    mutationFn: async (data: ContactFormValues) => {
-      const response = await apiRequest("POST", "/api/contact", data);
-      return response.json();
-    },
-    onSuccess: () => {
-      toast({
-        title: "Success!",
-        description: "Your message has been sent. We'll get back to you soon!",
-      });
-      setIsSubmitted(true);
-      form.reset();
-    },
-    onError: (error) => {
-      toast({
-        title: "Error",
-        description: error.message || "Something went wrong. Please try again.",
-        variant: "destructive",
-      });
-    },
-  });
-
-function onSubmit(data: ContactFormValues) {
-    // First submit the data to our backend
-    submitContactForm(data);
-    
-    // Then send the email using EmailJS
-    // Create a comprehensive email with all form fields clearly labeled
-    const emailParams = {
-      from_name: data.name,
-      from_email: data.email,
-      from_phone: data.phone || 'Not provided',
-      subject_interest: data.subject,
-      message: data.message,
-      // Add formatted content for better email readability
-      formatted_content: `
-Full Name: ${data.name}
-Email: ${data.email}
-Phone: ${data.phone || 'Not provided'}
-Subject Interest: ${data.subject}
-Message: ${data.message}
-      `.trim(),
-    };
-    
-    // Use our EmailJS utility
-    sendEmail(
-      'template_lcwsqtb', 
-      'service_1ujsvfi',
-      emailParams
-    )
-    .then((response) => {
-      if (response.success) {
-        console.log('Email sent successfully');
-      } else {
-        console.error('Error sending email:', response.error);
-      }
-    });
+  function onSubmit(data: ContactFormValues) {
+    setIsSubmitting(true);
+  
+    // 👇 Compose SMS message
+    const smsBody = encodeURIComponent(
+      `Full Name: ${data.name}
+  Email: ${data.email}
+  Phone: ${data.phone || 'Not provided'}
+  Subject Interest: ${data.subject}
+  Message: ${data.message}`
+    );
+  
+    // 👇 Trigger SMS intent for +918709222590
+    const smsLink = `sms:+918709222590?&body=${smsBody}`;
+    window.location.href = smsLink;
+  
+    // ✅ Mark submission as complete
+    setIsSubmitted(true);
+    setIsSubmitting(false);
   }
+  
+  
 
   const contactInfo = [
     {
@@ -159,7 +123,7 @@ Message: ${data.message}
   return (
     <section id="contact" className="py-16 bg-gradient-to-b from-[#A0BFE0]/20 to-gray-50">
       <div className="container mx-auto px-6">
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -189,7 +153,7 @@ Message: ${data.message}
             viewport={{ once: true, amount: 0.1 }}
             variants={formAnimation}
           >
-            <motion.div 
+            <motion.div
               className="bg-white p-8 rounded-xl shadow-lg overflow-hidden border border-gray-100"
               whileHover={{ boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
               transition={{ duration: 0.3 }}
@@ -198,19 +162,19 @@ Message: ${data.message}
                 Contact Form
               </h3>
               {isSubmitted ? (
-                <motion.div 
+                <motion.div
                   className="text-center p-8"
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <motion.div 
+                  <motion.div
                     className="bg-green-100 text-green-800 p-6 rounded-xl mb-6 border border-green-200"
                     initial={{ y: 20 }}
                     animate={{ y: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
                   >
-                    <motion.div 
+                    <motion.div
                       initial={{ scale: 0 }}
                       animate={{ scale: 1, rotate: [0, 10, 0] }}
                       transition={{ duration: 0.5, delay: 0.3 }}
@@ -381,10 +345,10 @@ Message: ${data.message}
                     >
                       <Button
                         type="submit"
-                        disabled={isPending}
+                        disabled={isSubmitting}
                         className="w-full bg-primary hover:bg-primary/90 text-white font-['Poppins'] font-semibold py-6 text-lg"
                       >
-                        {isPending ? "Submitting..." : "Submit Inquiry"}
+                        {isSubmitting ? "Submitting..." : "Submit Inquiry"}
                       </Button>
                     </motion.div>
                   </form>
@@ -394,7 +358,7 @@ Message: ${data.message}
           </motion.div>
 
           <div>
-            <motion.div 
+            <motion.div
               className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 mb-8 overflow-hidden"
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -405,7 +369,7 @@ Message: ${data.message}
               <h3 className="font-['Poppins'] font-semibold text-2xl text-primary mb-6">
                 Contact Information
               </h3>
-              <motion.div 
+              <motion.div
                 className="h-1 w-0 bg-[#A0BFE0] mb-8"
                 initial={{ width: 0 }}
                 whileInView={{ width: "5rem" }}
@@ -415,20 +379,20 @@ Message: ${data.message}
 
               <div className="space-y-6">
                 {contactInfo.map((item, index) => (
-                  <motion.div 
-                    key={index} 
+                  <motion.div
+                    key={index}
                     className="flex items-start"
                     initial={{ opacity: 0, x: 20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.3 + (index * 0.1) }}
                   >
-                    <motion.div 
+                    <motion.div
                       className="bg-[#A0BFE0]/30 rounded-full w-12 h-12 flex items-center justify-center text-primary mr-4 flex-shrink-0"
-                      whileHover={{ 
-                        rotate: 10, 
-                        scale: 1.1, 
-                        backgroundColor: "rgba(160, 191, 224, 0.5)" 
+                      whileHover={{
+                        rotate: 10,
+                        scale: 1.1,
+                        backgroundColor: "rgba(160, 191, 224, 0.5)"
                       }}
                       transition={{ type: "spring", stiffness: 300 }}
                     >
@@ -445,7 +409,7 @@ Message: ${data.message}
               </div>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 overflow-hidden"
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -454,7 +418,7 @@ Message: ${data.message}
               whileHover={{ boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
             >
               <h3 className="font-['Poppins'] font-semibold text-2xl text-primary mb-6">FAQ</h3>
-              <motion.div 
+              <motion.div
                 className="h-1 w-0 bg-[#A0BFE0] mb-8"
                 initial={{ width: 0 }}
                 whileInView={{ width: "5rem" }}
@@ -464,8 +428,8 @@ Message: ${data.message}
 
               <div className="space-y-8">
                 {faqs.map((faq, index) => (
-                  <motion.div 
-                    key={index} 
+                  <motion.div
+                    key={index}
                     className="border-b border-gray-100 pb-6 last:border-b-0 last:pb-0"
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -474,7 +438,7 @@ Message: ${data.message}
                     whileHover={{ y: -5 }}
                   >
                     <div className="flex items-center mb-2">
-                      <motion.div 
+                      <motion.div
                         className="text-primary mr-2"
                         whileHover={{ rotate: 10, scale: 1.1 }}
                         transition={{ type: "spring", stiffness: 300 }}
