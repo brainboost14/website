@@ -83,7 +83,7 @@ export default function ContactSection() {
     );
   
     // 👇 Trigger SMS intent for +918709222590
-    const smsLink = `sms:+918709222590?&body=${smsBody}`;
+    const smsLink = `sms:+917903989190?&body=${smsBody}`;
     window.location.href = smsLink;
   
     // ✅ Mark submission as complete
