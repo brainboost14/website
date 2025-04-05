@@ -6,7 +6,7 @@ const testimonials = [
     content:
       "My understanding of physics has improved tremendously after just one month of tutoring with Ritvik Sir. Now I can solve problems with confidence and enjoys the subject! He has his own amazing way of teaching style.",
     author: "Priya Mehta",
-    role: "Parent of Class 10 student",
+    role: "Class 10 student",
     // avatar: "https://randomuser.me/api/portraits/women/45.jpg",
     rating: 5,
   },

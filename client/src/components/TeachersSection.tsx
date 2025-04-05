@@ -8,7 +8,7 @@ const teachers = [
     name: "Shreya Singh",
     role: "Mathematics, Computer and Chemistry",
     // image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
-    skills: ["7+ years Experience", "Counselling", ],
+    skills: ["7+ years of Teaching Experience", "Counselling" ],
     bio: "B.Sc. in Computer Science , B.A & M.A in Psychology and Passionate about student Growth & holistic learning.",
   },
   {
@@ -16,7 +16,7 @@ const teachers = [
     name: "Ritvik Srivastava ",
     role: "Physics and Social Science Expert",
     // image: "https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
-    skills: ["3+ years of Experience", "UPSC Exams Expert"],
+    skills: ["3+ years of Teaching Experience", "UPSC Exams Expert"],
     bio: "Specialized in competitive Exam Stratergies and Structured Preparation, First-hand Experience with UPSC & Defense Exams.",
   },
   {
@@ -24,7 +24,7 @@ const teachers = [
     name: "Pratima Singh",
     role: "Biology and Psychology",
     // image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=776&q=80",
-    skills: ["5+ years of Experience", "Psychology (Gold Medalist)"],
+    skills: ["5+ years of Teaching Experience", "Psychology (Gold Medalist)"],
     bio: "Molecular Biologist with classroom teaching experience. Specializes in science education and preparing students for research projects.",
   },
 ];
