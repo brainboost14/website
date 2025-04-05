@@ -78,7 +78,7 @@ export default function ContactSection() {
       `Full Name: ${data.name}
   Email: ${data.email}
   Phone: ${data.phone || 'Not provided'}
-  Subject Interest: ${data.subject}
+  Class: ${data.subject}
   Message: ${data.message}`
     );
   
@@ -102,7 +102,7 @@ export default function ContactSection() {
     {
       icon: Phone,
       title: "Phone",
-      details: ["+919335122788", "Mon-Fri: 9am-7pm EST"],
+      details: ["+919335122788", "Mon-Fri: 9am-7pm IST"],
     },
     {
       icon: Clock,
@@ -281,7 +281,7 @@ export default function ContactSection() {
                         render={({ field }) => (
                           <FormItem>
                             <FormLabel className="text-foreground font-semibold">
-                              Subject Interest
+                              Class
                             </FormLabel>
                             <Select
                               onValueChange={field.onChange}
@@ -289,7 +289,7 @@ export default function ContactSection() {
                             >
                               <FormControl>
                                 <SelectTrigger className="focus:ring-primary">
-                                  <SelectValue placeholder="Select a subject" />
+                                  <SelectValue placeholder="Select your class" />
                                 </SelectTrigger>
                               </FormControl>
                               <SelectContent>
